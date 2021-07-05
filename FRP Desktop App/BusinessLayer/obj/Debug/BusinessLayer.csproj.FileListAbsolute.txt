@@ -1,0 +1,15 @@
+C:\Users\Yunus EMRE\source\repos\FRPSolition\BusinessLayer\bin\Debug\BusinessLayer.dll
+C:\Users\Yunus EMRE\source\repos\FRPSolition\BusinessLayer\bin\Debug\BusinessLayer.pdb
+C:\Users\Yunus EMRE\source\repos\FRPSolition\BusinessLayer\obj\Debug\BusinessLayer.csprojAssemblyReference.cache
+C:\Users\Yunus EMRE\source\repos\FRPSolition\BusinessLayer\obj\Debug\BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\Yunus EMRE\source\repos\FRPSolition\BusinessLayer\obj\Debug\BusinessLayer.dll
+C:\Users\Yunus EMRE\source\repos\FRPSolition\BusinessLayer\obj\Debug\BusinessLayer.pdb
+C:\Users\Yunus EMRE\source\repos\FRPSolition\BusinessLayer\bin\Debug\BusinessLayer.dll.config
+C:\Users\Yunus EMRE\source\repos\FRPSolition\BusinessLayer\bin\Debug\DataLayer.dll
+C:\Users\Yunus EMRE\source\repos\FRPSolition\BusinessLayer\bin\Debug\EntityFramework.dll
+C:\Users\Yunus EMRE\source\repos\FRPSolition\BusinessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Yunus EMRE\source\repos\FRPSolition\BusinessLayer\bin\Debug\DataLayer.pdb
+C:\Users\Yunus EMRE\source\repos\FRPSolition\BusinessLayer\bin\Debug\DataLayer.dll.config
+C:\Users\Yunus EMRE\source\repos\FRPSolition\BusinessLayer\bin\Debug\EntityFramework.xml
+C:\Users\Yunus EMRE\source\repos\FRPSolition\BusinessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Yunus EMRE\source\repos\FRPSolition\BusinessLayer\obj\Debug\BusinessLayer.csproj.CopyComplete

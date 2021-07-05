@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FrpDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Cities">
+    <Key>
+      <PropertyRef Name="CityId" />
+    </Key>
+    <Property Name="CityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="City" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Class">
+    <Key>
+      <PropertyRef Name="ClassId" />
+    </Key>
+    <Property Name="ClassId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ClassName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="ContactId" />
+    </Key>
+    <Property Name="ContactId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="50" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" />
+    <Property Name="MessageText" Type="varchar" MaxLength="500" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CityId" Type="int" />
+    <Property Name="CountyId" Type="int" />
+  </EntityType>
+  <EntityType Name="Counties">
+    <Key>
+      <PropertyRef Name="CountyId" />
+    </Key>
+    <Property Name="CountyId" Type="int" Nullable="false" />
+    <Property Name="County" Type="nvarchar" MaxLength="255" />
+    <Property Name="City" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Enemy">
+    <Key>
+      <PropertyRef Name="EnemyId" />
+    </Key>
+    <Property Name="EnemyId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EnemyName" Type="varchar" MaxLength="50" />
+    <Property Name="EnemyRace" Type="int" />
+    <Property Name="EnemyClass" Type="int" />
+  </EntityType>
+  <EntityType Name="GameStory">
+    <Key>
+      <PropertyRef Name="StoryId" />
+    </Key>
+    <Property Name="StoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StoryName" Type="varchar" MaxLength="100" />
+    <Property Name="StoryTopic" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Npc">
+    <Key>
+      <PropertyRef Name="NpcId" />
+    </Key>
+    <Property Name="NpcId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NpcName" Type="varchar" MaxLength="50" />
+    <Property Name="NpcRace" Type="int" />
+    <Property Name="NpcClass" Type="int" />
+  </EntityType>
+  <EntityType Name="Race">
+    <Key>
+      <PropertyRef Name="RaceId" />
+    </Key>
+    <Property Name="RaceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RaceName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleName" Type="varchar" MaxLength="50" />
+    <Property Name="RoleCreatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="RolesForms">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleId" Type="int" />
+    <Property Name="FormName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="UserChoose">
+    <Key>
+      <PropertyRef Name="UserChooseId" />
+    </Key>
+    <Property Name="UserChooseId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserChooseRace" Type="int" />
+    <Property Name="UserChooseClass" Type="int" />
+    <Property Name="CUserId" Type="int" />
+  </EntityType>
+  <EntityType Name="UserInRoles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="RoleId" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserRegister">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="50" />
+    <Property Name="UserPassword" Type="varchar" MaxLength="20" />
+    <Property Name="FirstName" Type="varchar" MaxLength="50" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="100" />
+    <Property Name="UChoose" Type="int" />
+  </EntityType>
+  <Association Name="FK_City">
+    <End Role="Cities" Type="Self.Cities" Multiplicity="0..1" />
+    <End Role="Contact" Type="Self.Contact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cities">
+        <PropertyRef Name="CityId" />
+      </Principal>
+      <Dependent Role="Contact">
+        <PropertyRef Name="CityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_County">
+    <End Role="Counties" Type="Self.Counties" Multiplicity="0..1" />
+    <End Role="Contact" Type="Self.Contact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Counties">
+        <PropertyRef Name="CountyId" />
+      </Principal>
+      <Dependent Role="Contact">
+        <PropertyRef Name="CountyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UIdChoose">
+    <End Role="UserRegister" Type="Self.UserRegister" Multiplicity="0..1" />
+    <End Role="UserChoose" Type="Self.UserChoose" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserRegister">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="UserChoose">
+        <PropertyRef Name="CUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PK_EnemyClass">
+    <End Role="Class" Type="Self.Class" Multiplicity="0..1" />
+    <End Role="Enemy" Type="Self.Enemy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Class">
+        <PropertyRef Name="ClassId" />
+      </Principal>
+      <Dependent Role="Enemy">
+        <PropertyRef Name="EnemyClass" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PK_EnemyRace">
+    <End Role="Race" Type="Self.Race" Multiplicity="0..1" />
+    <End Role="Enemy" Type="Self.Enemy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Race">
+        <PropertyRef Name="RaceId" />
+      </Principal>
+      <Dependent Role="Enemy">
+        <PropertyRef Name="EnemyRace" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PK_NpcClass">
+    <End Role="Class" Type="Self.Class" Multiplicity="0..1" />
+    <End Role="Npc" Type="Self.Npc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Class">
+        <PropertyRef Name="ClassId" />
+      </Principal>
+      <Dependent Role="Npc">
+        <PropertyRef Name="NpcClass" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PK_NpcRace">
+    <End Role="Race" Type="Self.Race" Multiplicity="0..1" />
+    <End Role="Npc" Type="Self.Npc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Race">
+        <PropertyRef Name="RaceId" />
+      </Principal>
+      <Dependent Role="Npc">
+        <PropertyRef Name="NpcRace" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PK_UserChooseClass">
+    <End Role="Class" Type="Self.Class" Multiplicity="0..1" />
+    <End Role="UserChoose" Type="Self.UserChoose" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Class">
+        <PropertyRef Name="ClassId" />
+      </Principal>
+      <Dependent Role="UserChoose">
+        <PropertyRef Name="UserChooseClass" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PK_UserChooseRace">
+    <End Role="Race" Type="Self.Race" Multiplicity="0..1" />
+    <End Role="UserChoose" Type="Self.UserChoose" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Race">
+        <PropertyRef Name="RaceId" />
+      </Principal>
+      <Dependent Role="UserChoose">
+        <PropertyRef Name="UserChooseRace" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PK_UsersChoose">
+    <End Role="UserChoose" Type="Self.UserChoose" Multiplicity="0..1" />
+    <End Role="UserRegister" Type="Self.UserRegister" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserChoose">
+        <PropertyRef Name="UserChooseId" />
+      </Principal>
+      <Dependent Role="UserRegister">
+        <PropertyRef Name="UChoose" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="FrpDatabaseModelStoreContainer">
+    <EntitySet Name="Cities" EntityType="Self.Cities" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Class" EntityType="Self.Class" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Contact" EntityType="Self.Contact" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Counties" EntityType="Self.Counties" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Enemy" EntityType="Self.Enemy" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GameStory" EntityType="Self.GameStory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Npc" EntityType="Self.Npc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Race" EntityType="Self.Race" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RolesForms" EntityType="Self.RolesForms" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserChoose" EntityType="Self.UserChoose" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserInRoles" EntityType="Self.UserInRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserRegister" EntityType="Self.UserRegister" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_City" Association="Self.FK_City">
+      <End Role="Cities" EntitySet="Cities" />
+      <End Role="Contact" EntitySet="Contact" />
+    </AssociationSet>
+    <AssociationSet Name="FK_County" Association="Self.FK_County">
+      <End Role="Counties" EntitySet="Counties" />
+      <End Role="Contact" EntitySet="Contact" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UIdChoose" Association="Self.FK_UIdChoose">
+      <End Role="UserRegister" EntitySet="UserRegister" />
+      <End Role="UserChoose" EntitySet="UserChoose" />
+    </AssociationSet>
+    <AssociationSet Name="PK_EnemyClass" Association="Self.PK_EnemyClass">
+      <End Role="Class" EntitySet="Class" />
+      <End Role="Enemy" EntitySet="Enemy" />
+    </AssociationSet>
+    <AssociationSet Name="PK_EnemyRace" Association="Self.PK_EnemyRace">
+      <End Role="Race" EntitySet="Race" />
+      <End Role="Enemy" EntitySet="Enemy" />
+    </AssociationSet>
+    <AssociationSet Name="PK_NpcClass" Association="Self.PK_NpcClass">
+      <End Role="Class" EntitySet="Class" />
+      <End Role="Npc" EntitySet="Npc" />
+    </AssociationSet>
+    <AssociationSet Name="PK_NpcRace" Association="Self.PK_NpcRace">
+      <End Role="Race" EntitySet="Race" />
+      <End Role="Npc" EntitySet="Npc" />
+    </AssociationSet>
+    <AssociationSet Name="PK_UserChooseClass" Association="Self.PK_UserChooseClass">
+      <End Role="Class" EntitySet="Class" />
+      <End Role="UserChoose" EntitySet="UserChoose" />
+    </AssociationSet>
+    <AssociationSet Name="PK_UserChooseRace" Association="Self.PK_UserChooseRace">
+      <End Role="Race" EntitySet="Race" />
+      <End Role="UserChoose" EntitySet="UserChoose" />
+    </AssociationSet>
+    <AssociationSet Name="PK_UsersChoose" Association="Self.PK_UsersChoose">
+      <End Role="UserChoose" EntitySet="UserChoose" />
+      <End Role="UserRegister" EntitySet="UserRegister" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

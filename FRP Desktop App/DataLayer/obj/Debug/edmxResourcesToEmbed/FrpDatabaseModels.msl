@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FrpDatabaseModelStoreContainer" CdmEntityContainer="FrpDatabaseEntities">
+    <EntitySetMapping Name="Cities">
+      <EntityTypeMapping TypeName="FrpDatabaseModel.Cities">
+        <MappingFragment StoreEntitySet="Cities">
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="City" ColumnName="City" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Class">
+      <EntityTypeMapping TypeName="FrpDatabaseModel.Class">
+        <MappingFragment StoreEntitySet="Class">
+          <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+          <ScalarProperty Name="ClassName" ColumnName="ClassName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contact">
+      <EntityTypeMapping TypeName="FrpDatabaseModel.Contact">
+        <MappingFragment StoreEntitySet="Contact">
+          <ScalarProperty Name="ContactId" ColumnName="ContactId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="MessageText" ColumnName="MessageText" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="CountyId" ColumnName="CountyId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Counties">
+      <EntityTypeMapping TypeName="FrpDatabaseModel.Counties">
+        <MappingFragment StoreEntitySet="Counties">
+          <ScalarProperty Name="CountyId" ColumnName="CountyId" />
+          <ScalarProperty Name="County" ColumnName="County" />
+          <ScalarProperty Name="City" ColumnName="City" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Enemy">
+      <EntityTypeMapping TypeName="FrpDatabaseModel.Enemy">
+        <MappingFragment StoreEntitySet="Enemy">
+          <ScalarProperty Name="EnemyId" ColumnName="EnemyId" />
+          <ScalarProperty Name="EnemyName" ColumnName="EnemyName" />
+          <ScalarProperty Name="EnemyRace" ColumnName="EnemyRace" />
+          <ScalarProperty Name="EnemyClass" ColumnName="EnemyClass" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GameStory">
+      <EntityTypeMapping TypeName="FrpDatabaseModel.GameStory">
+        <MappingFragment StoreEntitySet="GameStory">
+          <ScalarProperty Name="StoryId" ColumnName="StoryId" />
+          <ScalarProperty Name="StoryName" ColumnName="StoryName" />
+          <ScalarProperty Name="StoryTopic" ColumnName="StoryTopic" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Npc">
+      <EntityTypeMapping TypeName="FrpDatabaseModel.Npc">
+        <MappingFragment StoreEntitySet="Npc">
+          <ScalarProperty Name="NpcId" ColumnName="NpcId" />
+          <ScalarProperty Name="NpcName" ColumnName="NpcName" />
+          <ScalarProperty Name="NpcRace" ColumnName="NpcRace" />
+          <ScalarProperty Name="NpcClass" ColumnName="NpcClass" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Race">
+      <EntityTypeMapping TypeName="FrpDatabaseModel.Race">
+        <MappingFragment StoreEntitySet="Race">
+          <ScalarProperty Name="RaceId" ColumnName="RaceId" />
+          <ScalarProperty Name="RaceName" ColumnName="RaceName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="FrpDatabaseModel.Roles">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="RoleCreatedDate" ColumnName="RoleCreatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RolesForms">
+      <EntityTypeMapping TypeName="FrpDatabaseModel.RolesForms">
+        <MappingFragment StoreEntitySet="RolesForms">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="FormName" ColumnName="FormName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserChoose">
+      <EntityTypeMapping TypeName="FrpDatabaseModel.UserChoose">
+        <MappingFragment StoreEntitySet="UserChoose">
+          <ScalarProperty Name="UserChooseId" ColumnName="UserChooseId" />
+          <ScalarProperty Name="UserChooseRace" ColumnName="UserChooseRace" />
+          <ScalarProperty Name="UserChooseClass" ColumnName="UserChooseClass" />
+          <ScalarProperty Name="CUserId" ColumnName="CUserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserInRoles">
+      <EntityTypeMapping TypeName="FrpDatabaseModel.UserInRoles">
+        <MappingFragment StoreEntitySet="UserInRoles">
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserRegister">
+      <EntityTypeMapping TypeName="FrpDatabaseModel.UserRegister">
+        <MappingFragment StoreEntitySet="UserRegister">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="UChoose" ColumnName="UChoose" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

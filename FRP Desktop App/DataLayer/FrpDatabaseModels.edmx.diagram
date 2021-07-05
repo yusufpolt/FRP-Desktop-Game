@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0abb66eec699414eaf316615dcb23a48" Name="Diagram1">
+        <EntityTypeShape EntityType="FrpDatabaseModel.Cities" Width="1.5" PointX="0.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FrpDatabaseModel.Class" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FrpDatabaseModel.Contact" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="FrpDatabaseModel.Counties" Width="1.5" PointX="0.75" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FrpDatabaseModel.Enemy" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FrpDatabaseModel.GameStory" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FrpDatabaseModel.Npc" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FrpDatabaseModel.Race" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FrpDatabaseModel.Roles" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FrpDatabaseModel.RolesForms" Width="1.5" PointX="5.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FrpDatabaseModel.UserChoose" Width="1.5" PointX="6" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FrpDatabaseModel.UserInRoles" Width="1.5" PointX="7.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FrpDatabaseModel.UserRegister" Width="1.5" PointX="8.25" PointY="4.125" IsExpanded="true" />
+        <AssociationConnector Association="FrpDatabaseModel.FK_City" ManuallyRouted="false" />
+        <AssociationConnector Association="FrpDatabaseModel.PK_EnemyClass" ManuallyRouted="false" />
+        <AssociationConnector Association="FrpDatabaseModel.PK_NpcClass" ManuallyRouted="false" />
+        <AssociationConnector Association="FrpDatabaseModel.PK_UserChooseClass" ManuallyRouted="false" />
+        <AssociationConnector Association="FrpDatabaseModel.FK_County" ManuallyRouted="false" />
+        <AssociationConnector Association="FrpDatabaseModel.PK_EnemyRace" ManuallyRouted="false" />
+        <AssociationConnector Association="FrpDatabaseModel.PK_NpcRace" ManuallyRouted="false" />
+        <AssociationConnector Association="FrpDatabaseModel.PK_UserChooseRace" ManuallyRouted="false" />
+        <AssociationConnector Association="FrpDatabaseModel.FK_UIdChoose" ManuallyRouted="false" />
+        <AssociationConnector Association="FrpDatabaseModel.PK_UsersChoose" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
